@@ -1,3 +1,5 @@
+<a href="https://doi.org/10.5281/zenodo.22390438"><img src="https://zenodo.org/badge/1358453762.svg" alt="DOI"></a>
+
 # Standard Model with Right-Handed Dirac Neutrinos
 
 This publication provides a complete written form of the Standard Model extended by three right-handed neutrinos.
