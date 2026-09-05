@@ -1,0 +1,26 @@
+{
+  "title": "Standard Model Lagrangian Specifications with Right-Handed Neutrinos",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "description": "A fully expanded, gauge-fixed Standard Model Lagrangian with three sterile right-handed neutrinos and Dirac neutrino masses, written in the physical field basis in 't Hooft-Feynman gauge and including the complete Faddeev-Popov ghost sector. The deposit includes the model specification and its LaTeX source, a reference sheet and its LaTeX source, and a computational verification report.",
+  "creators": [
+    {
+      "name": "BARRETT, Paul",
+      "affiliation": "Byt-wyze"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0.0",
+  "keywords": [
+    "Standard Model",
+    "Lagrangian",
+    "right-handed neutrinos",
+    "Dirac neutrinos",
+    "Faddeev-Popov ghosts",
+    "electroweak theory",
+    "machine verification",
+    "hep-ph"
+  ]
+}

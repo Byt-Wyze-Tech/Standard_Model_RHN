@@ -1,0 +1,218 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\definecolor{refblue}{HTML}{12365A}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\color{refblue}\textbf{Extended Standard Model Lagrangian}}
+\rhead{\color{refblue}\itshape Technical Reference Sheet}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=1.7em,itemsep=3pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=2em,itemsep=2pt,topsep=3pt}
+\newcommand{\sectiontitle}[2]{%
+  \vspace{5pt}{\color{refblue}\Large\bfseries #1\hspace{1em}#2}\par\vspace{3pt}}
+\newcommand{\subsectiontitle}[2]{%
+  \vspace{4pt}{\color{refblue}\large\bfseries #1\hspace{0.8em}#2}\par\vspace{2pt}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{25}{28}\selectfont\bfseries\color{refblue}
+   Extended Gauge-Fixed Standard Model\\[-1mm]Lagrangian}\par
+  \vspace{4pt}
+  {\Large\color{refblue}Methodology, Field Bundles, and Sign Conventions}\par
+  \vspace{4pt}\hrule height 1.1pt
+\end{center}
+
+\sectiontitle{1}{Introduction and Model Scope}
+
+This reference sheet compiles the mathematical foundations, geometric definitions, and
+conventions for the Extended Standard Model (ESM). The specification extends the minimal
+Standard Model field content by including right-handed sterile neutrinos
+$\nu_R^\lambda$ with Dirac masses $m_\nu^\lambda$ and no Majorana mass terms.
+
+All physical fields are smooth sections, denoted by $\Gamma$, of appropriate vector
+bundles over flat Minkowski spacetime $\mathcal M\cong\mathbb R^{1,3}$. All bundles are
+trivial over $\mathcal M$; in the chosen coordinates and bundle trivializations,
+$\partial_\mu$ acts componentwise on field components.
+
+\sectiontitle{2}{Vector Bundles and Field Classifications}
+
+Every physical and auxiliary field is classified as a section of a specified bundle over
+$\mathcal M$.
+
+\begin{center}
+\small
+\textbf{Table 1: Geometric classification of physical and auxiliary fields}\par\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.225\textwidth}p{0.235\textwidth}>{\centering\arraybackslash}p{0.08\textwidth}Y@{}}
+\toprule
+Field category & Symbol(s) & Mass dim. & Vector bundle or space\\
+\midrule
+Scalars (real) & $H,\phi^0$ & 1 & $\mathcal M\times\mathbb R$ (trivial real line bundle)\\
+Scalars (complex) & $\phi^\pm$, $(\phi^+)^*=\phi^-$ & 1 & $\mathcal M\times\mathbb C$ (trivial complex line bundle)\\
+Gauge fields ($SU(3)_c$) & $g_\mu^a$ & 1 & $T^*\mathcal M$, with $i g_\mu\in\Gamma(T^*\mathcal M\otimes\mathfrak{su}(3))$\\
+Gauge fields ($SU(2)_L$) & $W_\mu^a$, $a=1,2,3$ & 1 & Real cotangent bundle $T^*\mathcal M$\\
+Gauge field ($U(1)_Y$) & $B_\mu$ & 1 & Real cotangent bundle $T^*\mathcal M$\\
+Physical neutral gauge fields & $Z_\mu,A_\mu$ & 1 & Real cotangent bundle $T^*\mathcal M$\\
+Physical charged gauge fields & $W_\mu^+$, $W_\mu^-=(W_\mu^+)^*$ & 1 & Complex cotangent bundle $T^*\mathcal M\otimes\mathbb C$\\
+Fermion fields (Dirac) & $e^\lambda,\nu^\lambda,u_j^\lambda,d_j^\lambda$ & $3/2$ & Spinor bundle $S$ over $\mathcal M$, acting on $\mathbb C^4$\\
+Colour ghosts & $G^a,\bar G^a$ & 1 & $\mathcal M\times\Lambda_{\rm odd}$ with $SU(3)_c$ adjoint structure\\
+Electroweak ghosts & $X^\pm,\bar X^\pm,X^0,\bar X^0,Y,\bar Y$ & 1 & $\mathcal M\times\Lambda_{\rm odd}$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsectiontitle{2.1}{Sterile Neutrino Details}
+
+The neutrino fields are Dirac:
+\begin{equation}
+  \nu^\lambda=\nu_L^\lambda+\nu_R^\lambda,
+  \qquad \nu_{L,R}^\lambda=P_{L,R}\nu^\lambda .
+\end{equation}
+The right-handed component $\nu_R^\lambda$ is a singlet under
+$SU(3)_c\times SU(2)_L\times U(1)_Y$ and therefore has no gauge-boson coupling. It enters
+through its kinetic term, the Dirac mass $m_\nu^\lambda$, and the $H$, $\phi^0$ and
+$\phi^\pm$ Yukawa couplings.
+
+\clearpage
+\sectiontitle{3}{Sign and Parameter Conventions}
+
+The following definitions fix the sign and parameter conventions used throughout the
+gauge-fixed specification.
+
+\begin{center}
+\footnotesize
+\textbf{Table 2: Sign conventions and parameter definitions}\par\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.21\textwidth}p{0.22\textwidth}Y@{}}
+\toprule
+Convention & Parameter or definition & Meaning\\
+\midrule
+Minkowski metric & $\eta_{\mu\nu}=\mathrm{diag}(+1,-1,-1,-1)$ &
+Flat metric on $\mathcal M$; $\partial^2\equiv\eta^{\mu\nu}\partial_\mu\partial_\nu$.\\
+Colour covariant derivative & $\sigma_s=-1$ &
+$D_\mu^{(c)}q=(\partial_\mu-i g_sT^a g_\mu^a)q$.\\
+Higgs covariant derivative & $Y_\Phi=+1$ &
+$D_\mu\Phi=(\partial_\mu-i gT_L^aW_\mu^a-i\frac{g'}2Y_\Phi B_\mu)\Phi$.\\
+Electric charge & $Q=T_L^3+Y/2$ & Gell--Mann--Nishijima relation.\\
+Tadpole parameter & $\beta_h=0$ & Tree-level condition giving no tadpole term.\\
+Gauge-fixing parameter & $\xi=1$ & 't Hooft--Feynman gauge.\\
+Faddeev--Popov sign & $\sigma_G=+1$ &
+$\mathcal L_{\rm FP}=\sigma_G\bar c_I(\delta F_I/\delta\theta_J)c_J$.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The weak mixing parameters obey $s_w^2+c_w^2=1$, with $e=g s_w>0$, and the Higgs
+vacuum convention is $v=2M/g$.
+
+\sectiontitle{4}{Index Domains and Summation Rules}
+
+\begin{itemize}
+  \item \textbf{Colour ($SU(3)_c$):} adjoint indices $a,b,c,r,s\in\{1,\ldots,8\}$;
+        fundamental indices $i,j\in\{1,2,3\}$.
+  \item \textbf{Weak isospin ($SU(2)_L$):} fundamental indices
+        $\alpha,\beta\in\{1,2\}$.
+  \item \textbf{Weak-isospin adjoint:} $a,b,c\in\{1,2,3\}$ when attached to
+        $W_\mu^a$, $\theta^a$, $T_L^a$ or $\epsilon^{abc}$.
+  \item \textbf{Generation (flavour):} $\lambda,\kappa\in\{1,2,3\}$.
+\end{itemize}
+
+\subsectiontitle{4.1}{Summation Notation Control}
+
+Repeated Lorentz, colour, adjoint, weak-isospin and generation indices are summed over
+their declared domains unless explicitly stated otherwise. Generation labels carried by
+diagonal mass parameters ($m_e^\kappa,m_\nu^\lambda,m_u^\lambda,m_d^\lambda$) select the
+mass associated with the accompanying field index; they do not introduce an additional
+contraction. Such a label may therefore appear more than twice in one monomial without
+implying a further sum.
+
+\sectiontitle{5}{Complete Infinitesimal Gauge Transformations}
+
+All Faddeev--Popov ghost vertices are obtained by varying the gauge-fixing functions under
+the complete infinitesimal transformations below.
+
+\textbf{Gauge-basis transformations}
+\begin{align}
+ \delta g_\mu^a &= \partial_\mu\theta_g^a+g_s f^{abc}g_\mu^b\theta_g^c, \\
+ \delta W_\mu^c &= \partial_\mu\theta^c+g\epsilon^{abc}W_\mu^a\theta^b,
+                    &&c=1,2,3, \\
+ \delta B_\mu &= \partial_\mu\theta_Y .
+\end{align}
+
+\textbf{Physical gauge-boson basis}
+\begin{align}
+ \delta W_\mu^\pm
+ &=\partial_\mu\theta^\pm
+ \pm i g\!\left[(c_w\theta_Z+s_w\theta_A)W_\mu^\pm
+ -(c_wZ_\mu+s_wA_\mu)\theta^\pm\right], \\
+ \delta Z_\mu
+ &=\partial_\mu\theta_Z+i g c_w(W_\mu^-\theta^+-W_\mu^+\theta^-), \\
+ \delta A_\mu
+ &=\partial_\mu\theta_A+i g s_w(W_\mu^-\theta^+-W_\mu^+\theta^-).
+\end{align}
+
+\clearpage
+\sectiontitle{5.1}{Scalar Transformations}
+
+Using $\Phi=(\phi^+,(v+H+i\phi^0)/\sqrt2)^T$ and $v=2M/g$, the scalar
+transformations are
+\begin{align}
+ \delta\phi^\pm
+ &=\pm iM\theta^\pm
+ \pm\frac{i g}{2}\theta^\pm(H\pm i\phi^0)
+ \pm i\left[\frac{g(2c_w^2-1)}{2c_w}\theta_Z+g s_w\theta_A\right]\phi^\pm,
+ \tag{8}\\
+ \delta\phi^0
+ &=-\frac{M}{c_w}\theta_Z-\frac{g}{2c_w}\theta_ZH
+ +\frac g2(\theta^-\phi^++\theta^+\phi^-),
+ \tag{9}\\
+ \delta H
+ &=\frac{g}{2c_w}\theta_Z\phi^0
+ +\frac{i g}{2}(\theta^-\phi^+-\theta^+\phi^-).
+ \tag{10}
+\end{align}
+
+These relations follow from
+\[
+ \delta\Phi=i\left(gT_L^a\theta^a+\frac{g'}2\theta_Y\right)\Phi .
+\]
+Together with the gauge-fixing functions, they generate the ghost--scalar interactions.
+In particular, the $\theta_Z$ and $\theta_A$ terms in $\delta\phi^\pm$ generate the
+$\bar X^\pm X^0\phi^\pm$ and $\bar X^\pm Y\phi^\pm$ vertices, while the
+$\theta^\mp\phi^\pm$ terms in $\delta\phi^0$ generate the
+$\bar X^0X^\mp\phi^\pm$ vertices.
+
+\sectiontitle{6}{Gauge-Fixing Functions}
+
+For completeness, the $\xi=1$ gauge-fixing functions used with the transformations above
+are
+\begin{align*}
+ F_+&=\partial_\mu W^{+\mu}-iM\phi^+,&
+ F_-&=\partial_\mu W^{-\mu}+iM\phi^-,\\
+ F_Z&=\partial_\mu Z^\mu-\frac{M}{c_w}\phi^0,&
+ F_A&=\partial_\mu A^\mu,&
+ F_g^a&=\partial_\mu g^{a\mu}.
+\end{align*}
+The Faddeev--Popov operator is
+$\mathcal M_{IJ}=\delta F_I/\delta\theta_J$, evaluated at zero gauge parameters.
+
+\vfill
+\hrule
+\vspace{4pt}
+{\small This sheet summarizes the definitions used by
+\texttt{SM\_RHNu\_Dirac\_v1.tex}. In any conflict, that complete specification is the
+authoritative source.}
+
+\end{document}

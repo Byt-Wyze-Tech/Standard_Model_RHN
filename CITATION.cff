@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it.
+title: Standard Model Lagrangian Specifications with Right-Handed Neutrinos
+type: dataset
+authors:
+  - given-names: Paul
+    family-names: Barrett
+    affiliation: Byt-wyze
+abstract: >-
+  A fully expanded, gauge-fixed Standard Model Lagrangian with three
+  sterile right-handed neutrinos and Dirac neutrino masses, including
+  the complete Faddeev-Popov ghost sector and a machine verification
+  report.
+keywords:
+  - Standard Model
+  - Lagrangian
+  - right-handed neutrinos
+  - Dirac neutrinos
+  - Faddeev-Popov ghosts
+  - electroweak theory
+  - machine verification
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2026-09-04

@@ -1,0 +1,242 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\allowdisplaybreaks
+
+\begin{document}
+
+\section*{Extended Standard Model Lagrangian: Gauge-Fixed Specification}
+
+\subsection*{0. Type Declarations and Index Domains}
+Strict mathematical typing, dimensional closure ($[\mathcal{L}] = 4$ in natural units $c = \hbar = 1$), and manifest Hermiticity for the bosonic and fermionic sectors in Minkowski space with metric $\eta_{\mu\nu} = \mathrm{diag}(+1, -1, -1, -1)$. Let $\mathcal M \equiv \mathbb{R}^{1,3}$ be the spacetime manifold. For the Faddeev–Popov ghost sector, we adopt a convention consistent with the Romão–Silva parameterization (Ref.~\cite{arXiv:1209.6213}) but expressed directly in our field basis without field redefinitions. The sign parameters, with domains $\sigma,\sigma_\theta,\sigma_e,\sigma_Z,\sigma_G,\sigma_s \in \{-1,+1\}$, are:
+\[
+\sigma = -1,\quad \sigma_\theta = +1,\quad \sigma_e = -1,\quad 
+\sigma_Z = +1,\quad \sigma_G = +1,\quad \sigma_s = -1,
+\]
+and the electromagnetic coupling is defined as $e \equiv g s_w > 0$. These satisfy the source's relation $\sigma_e e = (\sigma \sigma_\theta) g s_w$. The gauge‑fixing functions are:
+\[
+F_+ = \partial_\mu W^{+\mu} - i M \phi^+,\qquad
+F_- = \partial_\mu W^{-\mu} + i M \phi^-,\qquad
+F_Z = \partial_\mu Z^\mu - \frac{M}{c_w}\phi^0,\qquad
+F_A = \partial_\mu A^\mu,\qquad
+F_g^a = \partial_\mu g^{a\mu}.
+\]
+These match the Romão–Silva $F_\pm$ (with $i\sigma M\phi^\pm$ for $\sigma=-1$) and $F_Z$ (with $\sigma\sigma_Z = -1$) without any field redefinition. The ghost fields are identified as $X^\pm \equiv c^\pm$, $X^0 \equiv c_Z$, $Y \equiv c_A$, $G^a \equiv \omega^a$.
+
+The FP Lagrangian is defined directly via the standard Faddeev–Popov determinant:
+\[
+\mathcal L_{\rm FP} = \sigma_G \,\bar c_I \left(\frac{\delta F_I}{\delta \theta_J}\right) c_J,
+\]
+where the index sets are $I,J \in \mathcal I_{\rm gauge} = \{+, -, Z, A\} \sqcup \{g^1,\dots,g^8\}$, and $\theta_J$ are the corresponding gauge parameters. The FP operator is the matrix $\mathcal M_{IJ} = \delta F_I/\delta \theta_J$ evaluated at zero gauge parameters; its type is a linear map from the space of gauge parameters to the space of gauge‑fixing functions. The gauge transformations are those of the electroweak and QCD sectors in the physical $A,Z,W^\pm$ basis, stated explicitly below. These yield the ghost interactions displayed in Section~1. Electromagnetic charges are $q(X^+)=+1$, $q(\bar{X}^+)=-1$, $q(X^-)=-1$, $q(\bar{X}^-)=+1$, $q(X^0)=q(Y)=q(\bar{X}^0)=q(\bar{Y})=0$, ensuring that every complete FP interaction monomial is neutral. For the SU(3) generators, we adopt the physics convention of Hermitian traceless matrices (so that the structure constants are real and the covariant derivative includes an explicit $i$).
+
+
+The infinitesimal gauge transformations are displayed here in full --- no terms are suppressed. In the
+gauge basis they read
+\[
+\delta W_\mu^c = \partial_\mu \theta^c + g\, \epsilon^{abc} W_\mu^a \theta^b \quad (c = 1,2,3),
+\qquad
+\delta B_\mu = \partial_\mu \theta_Y,
+\qquad
+\delta g_\mu^a = \partial_\mu \theta_g^a + g_s f^{abc} g_\mu^b \theta_g^c ,
+\]
+fixed by the requirement that $D_\mu\Phi$ transform covariantly, $D_\mu\Phi \to U\, D_\mu\Phi$, which gives
+$W_\mu \to U W_\mu U^{-1} - \tfrac{i}{g}(\partial_\mu U) U^{-1}$ for $W_\mu \equiv T_L^a W_\mu^a$ and
+$U = \exp(i g T_L^a \theta^a)$, together with its abelian limit $\delta B_\mu = \partial_\mu \theta_Y$.
+Rotating to the physical basis with the relations declared in Section~0 gives
+\[
+\delta W_\mu^\pm = \partial_\mu \theta^\pm
+\pm i g \big[ (c_w \theta_Z + s_w \theta_A) W_\mu^\pm - (c_w Z_\mu + s_w A_\mu) \theta^\pm \big],
+\]
+\[
+\delta Z_\mu = \partial_\mu \theta_Z + i g c_w (W_\mu^- \theta^+ - W_\mu^+ \theta^-),\qquad
+\delta A_\mu = \partial_\mu \theta_A + i g s_w (W_\mu^- \theta^+ - W_\mu^+ \theta^-),
+\]
+and, for the scalars,
+\[
+\delta \phi^\pm = \pm i M \theta^\pm \pm \tfrac{i}{2} g\, \theta^\pm (H \pm i \phi^0)
+\pm i \Big[ \tfrac{g (2 c_w^2 - 1)}{2 c_w} \theta_Z + g s_w \theta_A \Big] \phi^\pm,
+\]
+\[
+\delta \phi^0 = -\tfrac{M}{c_w}\theta_Z - \tfrac{g}{2 c_w}\theta_Z H
++ \tfrac{g}{2} \big( \theta^- \phi^+ + \theta^+ \phi^- \big),\qquad
+\delta H = \tfrac{g}{2 c_w}\theta_Z \phi^0
++ \tfrac{i}{2} g \big( \theta^- \phi^+ - \theta^+ \phi^- \big),
+\]
+which follow from $\delta \Phi = i\left(g T_L^a \theta^a + \tfrac{g'}{2}\theta_Y\right)\Phi$ with
+$\Phi = \big(\phi^+,\ \tfrac{1}{\sqrt2}(v + H + i\phi^0)\big)^T$ and $v = 2M/g$.
+Every Faddeev--Popov vertex displayed in Section~1 follows from these transformations together with the
+gauge-fixing functions above; in particular the $\theta_Z$ and $\theta_A$ terms of $\delta\phi^\pm$ generate
+the $\bar X^\pm X^0 \phi^\pm$ and $\bar X^\pm Y \phi^\pm$ vertices, and the $\theta^\mp \phi^\pm$ terms of
+$\delta\phi^0$ generate the $\bar X^0 X^\mp \phi^\pm$ vertices.
+
+\begin{itemize}
+    \item \textbf{Model Scope:} This specification extends the minimal Standard Model field content by including right-handed sterile neutrinos $\nu_R^\lambda$ with Dirac masses $m_\nu^\lambda$ (no Majorana terms). All fields are smooth sections of appropriate vector bundles over $\mathcal M$: scalars are sections of $\mathcal M\times\mathbb R$ or $\mathcal M\times\mathbb C$; gauge fields are sections of $T^*\mathcal M$ (real or complex), with the gluon field obeying $i g_\mu \in \Gamma(T^*\mathcal M\otimes\mathfrak{su}(3))$; fermions are sections of the spinor bundle $S$; ghosts are sections of $\mathcal M\times\Lambda_{\rm odd}$ (with appropriate colour adjoint structure for $G^a$).
+    \item \textbf{Spacetime and Derivatives:} $\mu, \nu \in \{0, 1, 2, 3\}$. $\partial_\mu$ is the standard partial derivative acting on sections of any vector bundle. Its type is $\partial_\mu : \Gamma(E) \to \Gamma(E)$ for each relevant bundle $E$. The d'Alembertian is $\partial^2 \equiv \eta^{\mu\nu}\partial_\mu\partial_\nu : \Gamma(E) \to \Gamma(E)$. Hermitian conjugation is denoted by $\dagger$ and acts on operator/algebra elements according to the usual adjoint rules; complex conjugation is denoted by $*$ and acts on complex fields; the trace $\operatorname{tr}$ is the ordinary matrix trace on the fundamental representation of SU(3).
+    All bundles here are trivial over $\mathcal M \cong \mathbb{R}^{1,3}$; in the chosen global Minkowski coordinates and bundle trivializations, $\partial_\mu$ acts componentwise on field components.
+    The covariant derivative on the Higgs doublet is $D_\mu \Phi = \big(\partial_\mu - i g T_L^a W_\mu^a - i \tfrac{g'}{2} Y_\Phi B_\mu\big)\Phi$ with $Y_\Phi = +1$, and the colour covariant derivative on the quark triplets is $D_\mu^{(c)} q = \big(\partial_\mu - i g_s T^a g_\mu^a\big) q$, equivalently $\sigma_s = -1$ as declared above; electric charge is $Q = T_L^3 + Y/2$. These conventions fix the sign of every gauge interaction below.
+    \item \textbf{Index Domains:} 
+    Color (SU(3)$_c$): $a, b, c, r, s \in \{1, \dots, 8\}$; $i, j \in \{1, 2, 3\}$. 
+    Weak Isospin: $\alpha, \beta \in \{1, 2\}$. 
+    Generations: $\lambda, \kappa \in \{1, 2, 3\}$.
+    Weak isospin adjoint (SU(2)$_L$): $a,b,c \in \{1,2,3\}$ when attached to $W_\mu^a$, $\theta^a$, $T_L^a$, or $\epsilon^{abc}$; the colour range $\{1,\dots,8\}$ applies to $g_\mu^a$, $\theta_g^a$, $T^a$, and $f^{abc}$.
+    Repeated Lorentz, colour, adjoint, weak-isospin, and generation indices are summed over their declared domains unless explicitly stated otherwise. Generation labels carried by mass parameters ($m_e^\kappa$, $m_\nu^\lambda$, $m_u^\lambda$, $m_d^\lambda$) are diagonal parameter values selected by the accompanying field index, not additional contracted indices; a generation index may therefore occur more than twice in a single monomial without implying a further sum.
+    \item \textbf{Clifford Algebra and Spinors:} 
+    $\gamma^\mu, \gamma^5 \in Cl(1,3)$ acting on Dirac spinors $\mathbb{C}^4$, with $\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu}I_4$ and $\gamma_5 \equiv \gamma^5$.
+    Chirality projectors: $P_{R,L} = \frac{1 \pm \gamma^5}{2}$.
+    Dirac adjoint: $\bar{\psi} = \psi^\dagger \gamma^0$.
+    \item \textbf{Gauge Fields (Dimension 1):} 
+    The gluon components are $g_\mu^a : \mathcal M \to \mathbb{R}$; the Lie‑algebra‑valued gluon field is $g_\mu \equiv g_\mu^a T^a$, with $i g_\mu \in \Gamma(T^*\mathcal M \otimes \mathfrak{su}(3))$, built from the Hermitian generators $T^a$. The SU(2)$_L$ gauge fields are $W_\mu^a \in \Gamma(T^*\mathcal M)$ for $a \in \{1,2,3\}$, and the hypercharge field is $B_\mu \in \Gamma(T^*\mathcal M)$. The neutral fields are $Z_\mu, A_\mu \in \Gamma(T^*\mathcal M)$; the charged fields are $W_\mu^+ \in \Gamma(T^*\mathcal M \otimes \mathbb{C})$, with $W_\mu^- = (W_\mu^+)^*$.
+    \item \textbf{Scalar Fields (Dimension 1):} 
+    $H, \phi^0 \in \Gamma(\mathcal M\times\mathbb R)$; $\phi^\pm \in \Gamma(\mathcal M\times\mathbb C)$ with $(\phi^+)^* = \phi^-$.
+    \item \textbf{Fermion Fields (Dimension 3/2):} 
+    Dirac spinors $e^\lambda, \nu^\lambda, u_j^\lambda, d_j^\lambda \in \Gamma(S)$, where $S$ is the spinor bundle over $\mathcal M$.
+    The neutrino fields are Dirac, $\nu^\lambda = \nu_L^\lambda + \nu_R^\lambda$ with $\nu_{L,R}^\lambda = P_{L,R}\nu^\lambda$, where $\nu_R^\lambda$ is a singlet under $\mathrm{SU(3)}_c \times \mathrm{SU(2)}_L \times \mathrm{U(1)}_Y$ and therefore couples to no gauge boson; it enters only through its kinetic term, the Dirac mass $m_\nu^\lambda$, and the $H$, $\phi^0$, $\phi^\pm$ Yukawa couplings below.
+    \item \textbf{Couplings and Parameters:} 
+    $g, g', g_s \in \mathbb{R}^+$ with $g' = g s_w / c_w$ (all dimension 0); $s_w, c_w \in (0,1)$ with $s_w^2 + c_w^2 = 1$;
+    $\epsilon^{abc}$ are the SU(2) structure constants, typed as $\epsilon: \{1,2,3\}^3 \to \mathbb{R}$, totally antisymmetric with $\epsilon^{123} = +1$;
+    $f^{abc}$ are the SU(3) structure constants, typed as $f: \{1,\dots,8\}^3 \to \mathbb{R}$;
+    $T^a$ are the SU(3) generators, typed as $T: \{1,\dots,8\} \to \operatorname{End}(\mathbb{C}^3)$, with $\mathrm{tr}(T^a T^b) = \frac{1}{2}\delta^{ab}$; these are Hermitian, so $T^a \in i\,\mathfrak{su}(3)$ and the Lie-algebra-valued gluon field is $i g_\mu^a T^a \in \Gamma(T^*\mathcal M \otimes \mathfrak{su}(3))$;
+    $T_L^a \equiv \tau^a/2$ are the SU(2)$_L$ generators, where $\tau^a$ are the Pauli matrices, typed as $T_L : \{1,2,3\} \to \operatorname{End}(\mathbb{C}^2)$, with $\mathrm{tr}(T_L^a T_L^b) = \frac{1}{2}\delta^{ab}$;
+    $\alpha_h \in \mathbb{R}_{>0}$ (dimension 0, positive for stable vacuum); $\beta_h = 0$ (tree‑level counterterm, set to zero to preserve the stated Goldstone masses and avoid a tadpole).
+    \item \textbf{Masses (Dimension 1):} 
+    $M, m_e^\lambda, m_u^\lambda, m_d^\lambda, m_\nu^\lambda \in \mathbb{R}^+$.
+    \item \textbf{Mixing Matrices (Dimension 0):} 
+    $V_{\text{lep}} \equiv U_{\rm PMNS}^\dagger \in U(3)$; $V_{\text{CKM}} \in U(3)$ (CKM). The flavour-to-mass rotation is $\nu_{\ell L} = (U_{\rm PMNS})_{\ell\lambda}\,\nu_{\lambda L}$ for $\ell \in \{e,\mu,\tau\}$ and $\lambda \in \{1,2,3\}$, so that $U_{\rm PMNS}$ appears in the $W^-$ current as $\bar e^\ell \gamma^\mu (U_{\rm PMNS})_{\ell\lambda} \nu^\lambda$; the matrix in the $W^+$ current below is therefore $V_{\rm lep} = U_{\rm PMNS}^\dagger$. The quark sector uses the conventional placement, with $V_{\rm CKM}$ itself in the $W^+$ current.
+    \item \textbf{Gauge-Fixing Parameter:} $\xi = 1$ ('t Hooft--Feynman gauge). 
+    The gauge-fixing Lagrangian is
+    \[
+    \mathcal{L}_{\rm GF} =
+    -(\partial_\mu W^{+\mu} - i M\phi^+)(\partial_\nu W^{-\nu} + i M\phi^-)
+    -\frac12\left(\partial_\mu Z^\mu-\frac{M}{c_w}\phi^0\right)^2
+    -\frac12(\partial_\mu A^\mu)^2
+    -\frac12(\partial_\mu g^{a\mu})^2 .
+    \]
+    This cancels all bilinear $V_\mu\partial^\mu\phi$ mixing and yields the Goldstone masses shown below. The charged term uses coefficient $1$ (not $1/2$) because $W^\pm$ are complex fields, while the neutral and gluon terms have $1/2$ for real fields.
+    \item \textbf{Gauge Parameters (Dimension 0):}
+    $\theta^a, \theta_Y \in \Gamma(\mathcal M\times\mathbb R)$ for $a\in\{1,2,3\}$, and $\theta_g^a \in \Gamma(\mathcal M\times\mathbb R)$ for $a\in\{1,\dots,8\}$.
+    The physical basis is $\theta^\pm = (\theta^1 \mp i\theta^2)/\sqrt2 \in \Gamma(\mathcal M\times\mathbb C)$ with $(\theta^+)^* = \theta^-$, and $\theta^3 = c_w\theta_Z + s_w\theta_A$, $\theta_Y = c_w\theta_A - s_w\theta_Z$ with $\theta_Z,\theta_A \in \Gamma(\mathcal M\times\mathbb R)$.
+    The gauge fields use the same rotation: $W_\mu^\pm = (W_\mu^1 \mp i W_\mu^2)/\sqrt2$, $W_\mu^3 = c_w Z_\mu + s_w A_\mu$, $B_\mu = c_w A_\mu - s_w Z_\mu$.
+    \item \textbf{Ghost and Antighost Fields (Dimension 1):} 
+    Ghosts: $X^\pm, X^0, Y \in \Gamma(\mathcal M\times\Lambda_{\rm odd})$; $G^a \in \Gamma(\mathcal M\times\Lambda_{\rm odd})$ with colour adjoint index; antighosts are the corresponding $\bar{X}^\pm, \bar{X}^0, \bar{Y}, \bar{G}^a$.
+    \textbf{Ghost sector definition:} The ghost Lagrangian is the standard Faddeev–Popov term derived from the gauge‑fixing functions above via the variation formula $\mathcal L_{\rm FP} = \sigma_G \bar c_I (\delta F_I/\delta \theta_J) c_J$ with $\sigma_G = +1$; this yields the displayed ghost interactions. Electromagnetic charges ensure that every complete FP interaction monomial is neutral.
+\end{itemize}
+
+\subsection*{1. The Complete Gauge-Fixed Lagrangian Density ($\xi=1$)}
+The following expression equals $\mathcal L_{\rm inv} + \mathcal L_{\rm GF}|_{\xi=1} + \mathcal L_{\rm FP}|_{\xi=1}$ exactly, with the FP sector defined by the gauge‑fixing functions and the variation formula specified above. The bosonic and fermionic sectors are Hermitian, matching the scoping stated in Section~0: terms that are not individually Hermitian --- the $W^\pm$ charged currents and the $\phi^\pm$ Yukawa couplings --- occur in conjugate pairs, while elsewhere explicit factors of $i$ multiply anti-Hermitian structures, weak charged currents are purely left‑chiral, the neutral Goldstone Yukawa couplings respect the upper/lower doublet distinction, the gauge‑Higgs couplings follow the $(v+H)$ convention already used in the Yukawa sector, and the electromagnetic covariant derivative for charged scalars is consistently implemented.
+
+\begin{multline*}
+\mathcal{L}_{\mathrm{SM}} = 
+-\frac{1}{2} (\partial_\mu g_\nu^a) (\partial^\mu g^{a\nu}) 
+- g_s f^{abc} (\partial_\mu g_\nu^a) g^{b\mu} g^{c\nu} 
+- \frac{1}{4} g_s^2 f^{abc} f^{ars} g_\mu^b g_\nu^c g^{r\mu} g^{s\nu} \\
+- (\partial_\mu W_\nu^+) (\partial^\mu W^{-\nu}) 
++ M^2 W_\mu^+ W^{-\mu} 
+- \frac{1}{2} (\partial_\mu Z_\nu) (\partial^\mu Z^\nu) 
++ \frac{1}{2c_w^2} M^2 Z_\mu Z^\mu \\
+- \frac{1}{2} (\partial_\mu A_\nu) (\partial^\mu A^\nu) 
++ igc_w \Big[ (\partial_\mu Z_\nu) (W^{+\mu} W^{-\nu} - W^{+\nu} W^{-\mu}) 
++ Z_\nu (W_\mu^+ \partial^\nu W^{-\mu} - W^{-\mu} \partial^\nu W_\mu^+) \\
+- Z_\mu (W^{+\nu} \partial_\nu W^{-\mu} - W^{-\nu} \partial_\nu W^{+\mu}) \Big] 
++ igs_w \Big[ (\partial_\mu A_\nu) (W^{+\mu} W^{-\nu} - W^{+\nu} W^{-\mu}) 
++ A_\nu (W_\mu^+ \partial^\nu W^{-\mu} - W^{-\mu} \partial^\nu W_\mu^+) \\
+- A_\mu (W^{+\nu} \partial_\nu W^{-\mu} - W^{-\nu} \partial_\nu W^{+\mu}) \Big] 
+- \frac{1}{2} g^2 (W_\mu^+ W^{-\mu}) (W_\nu^+ W^{-\nu}) 
++ \frac{1}{2} g^2 (W_\mu^+ W_\nu^-) (W^{+\mu} W^{-\nu}) \\
++ g^2 c_w^2 \Big[ (Z_\mu W^{+\mu}) (Z_\nu W^{-\nu}) - (Z_\mu Z^\mu) (W_\nu^+ W^{-\nu}) \Big] 
++ g^2 s_w^2 \Big[ (A_\mu W^{+\mu}) (A_\nu W^{-\nu}) - (A_\mu A^\mu) (W_\nu^+ W^{-\nu}) \Big] \\
++ g^2 s_w c_w \Big[ A_\mu Z_\nu (W^{+\mu} W^{-\nu} + W^{+\nu} W^{-\mu}) 
+- 2 A_\mu Z^\mu W_\nu^+ W^{-\nu} \Big] 
++ \frac{1}{2} (\partial_\mu H) (\partial^\mu H) 
+- 2 M^2 \alpha_h H^2 \\
++ (\partial_\mu \phi^+) (\partial^\mu \phi^-) 
+- M^2 \phi^+ \phi^- 
++ \frac{1}{2} (\partial_\mu \phi^0) (\partial^\mu \phi^0) 
+- \frac{1}{2} \frac{M^2}{c_w^2} (\phi^0)^2 
++ \frac{2M^4}{g^2} \alpha_h \quad (\beta_h=0) \\
+- g \alpha_h M (H^3 + H \phi^0 \phi^0 + 2 H \phi^+ \phi^-) 
+- \frac{1}{8} g^2 \alpha_h \Big( H^4 + (\phi^0)^4 + 4 (\phi^+ \phi^-)^2 + 4 (\phi^0)^2 \phi^+ \phi^- + 4 H^2 \phi^+ \phi^- + 2 (\phi^0)^2 H^2 \Big) \\
++ g M W_\mu^+ W^{-\mu} H 
++ \frac{g M}{2 c_w^2} Z_\mu Z^\mu H 
++ \frac{1}{2} g \Big[ W_\mu^+ (\phi^0 \partial^\mu \phi^- - \phi^- \partial^\mu \phi^0) 
++ W_\mu^- (\phi^0 \partial^\mu \phi^+ - \phi^+ \partial^\mu \phi^0) \Big] \\
+- \frac{1}{2} i g \Big[ W_\mu^+ (H \partial^\mu \phi^- - \phi^- \partial^\mu H) 
+- W_\mu^- (H \partial^\mu \phi^+ - \phi^+ \partial^\mu H) \Big] 
++ \frac{1}{2} g \frac{1}{c_w} \Big[ Z_\mu (H \partial^\mu \phi^0 - \phi^0 \partial^\mu H) \Big] \\
+- g \frac{s_w^2}{c_w} M Z_\mu (W^{+\mu} \phi^- + W^{-\mu} \phi^+) 
++ g s_w M A_\mu (W^{+\mu} \phi^- + W^{-\mu} \phi^+) \\
+- i g s_w A_\mu (\phi^+ \partial^\mu \phi^- - \phi^- \partial^\mu \phi^+) 
++ i g \frac{1 - 2 c_w^2}{2 c_w} Z_\mu (\phi^+ \partial^\mu \phi^- - \phi^- \partial^\mu \phi^+) 
++ \frac{1}{4} g^2 W_\mu^+ W^{-\mu} (H^2 + (\phi^0)^2 + 2 \phi^+ \phi^-) \\
++ \frac{1}{8} g^2 \frac{1}{c_w^2} Z_\mu Z^\mu \Big( H^2 + (\phi^0)^2 + 2 (2 s_w^2 - 1)^2 \phi^+ \phi^- \Big) 
++ g^2 s_w^2 A_\mu A^\mu \phi^+ \phi^- 
++ g^2 \frac{s_w}{c_w} (2 c_w^2 - 1) Z_\mu A^\mu \phi^+ \phi^- 
+- \frac{1}{2} i g^2 \frac{s_w^2}{c_w} Z_\mu \phi^0 (W^{+\mu} \phi^- - W^{-\mu} \phi^+) \\
+- \frac{1}{2} g^2 \frac{s_w^2}{c_w} Z_\mu H (W^{+\mu} \phi^- + W^{-\mu} \phi^+) 
++ \frac{1}{2} i g^2 s_w A_\mu \phi^0 (W^{+\mu} \phi^- - W^{-\mu} \phi^+) 
++ \frac{1}{2} g^2 s_w A_\mu H (W^{+\mu} \phi^- + W^{-\mu} \phi^+) \\
++ g_s \bar{u}_i^\lambda \gamma^\mu (T^a)^i_{\;j} u_j^\lambda g_\mu^a
++ g_s \bar{d}_i^\lambda \gamma^\mu (T^a)^i_{\;j} d_j^\lambda g_\mu^a \\
++ \bar{e}^\lambda (i \gamma^\mu \partial_\mu - m_e^\lambda) e^\lambda 
++ \bar{\nu}^\lambda (i \gamma^\mu \partial_\mu - m_\nu^\lambda) \nu^\lambda 
++ \bar{u}_j^\lambda (i \gamma^\mu \partial_\mu - m_u^\lambda) u_j^\lambda 
++ \bar{d}_j^\lambda (i \gamma^\mu \partial_\mu - m_d^\lambda) d_j^\lambda \\
++ g s_w A_\mu \left( - \bar{e}^\lambda \gamma^\mu e^\lambda 
++ \frac{2}{3} \bar{u}_j^\lambda \gamma^\mu u_j^\lambda 
+- \frac{1}{3} \bar{d}_j^\lambda \gamma^\mu d_j^\lambda \right) \\
++ \frac{g}{4 c_w} Z_\mu \Big\{ 
+\bar{\nu}^\lambda \gamma^\mu (1 - \gamma^5) \nu^\lambda 
++ \bar{e}^\lambda \gamma^\mu (4 s_w^2 - 1 + \gamma^5) e^\lambda 
++ \bar{d}_j^\lambda \gamma^\mu \left( \frac{4}{3} s_w^2 - 1 + \gamma^5 \right) d_j^\lambda 
++ \bar{u}_j^\lambda \gamma^\mu \left( 1 - \frac{8}{3} s_w^2 - \gamma^5 \right) u_j^\lambda 
+\Big\} \\
++ \frac{g}{2 \sqrt{2}} W_\mu^+ \Big( 
+\bar{\nu}^\lambda \gamma^\mu (1 - \gamma^5) (V_{\text{lep}})_{\lambda\kappa} e^\kappa 
++ \bar{u}_j^\lambda \gamma^\mu (1 - \gamma^5) (V_{\text{CKM}})_{\lambda\kappa} d_j^\kappa 
+\Big) \\
++ \frac{g}{2 \sqrt{2}} W_\mu^- \Big( 
+\bar{e}^\kappa (V_{\text{lep}}^\dagger)_{\kappa\lambda} \gamma^\mu (1 - \gamma^5) \nu^\lambda 
++ \bar{d}_j^\kappa (V_{\text{CKM}}^\dagger)_{\kappa\lambda} \gamma^\mu (1 - \gamma^5) u_j^\lambda 
+\Big) \\
+- \frac{g}{2 M \sqrt{2}} \phi^+ \Big[ 
+\bar{\nu}^\lambda (V_{\text{lep}})_{\lambda\kappa} \left( m_e^\kappa (1 + \gamma^5) - m_\nu^\lambda (1 - \gamma^5) \right) e^\kappa 
++ \bar{u}_j^\lambda (V_{\text{CKM}})_{\lambda\kappa} \left( m_d^\kappa (1 + \gamma^5) - m_u^\lambda (1 - \gamma^5) \right) d_j^\kappa 
+\Big] \\
+- \frac{g}{2 M \sqrt{2}} \phi^- \Big[ 
+\bar{e}^\kappa (V_{\text{lep}}^\dagger)_{\kappa\lambda} \left( m_e^\kappa (1 - \gamma^5) - m_\nu^\lambda (1 + \gamma^5) \right) \nu^\lambda 
++ \bar{d}_j^\kappa (V_{\text{CKM}}^\dagger)_{\kappa\lambda} \left( m_d^\kappa (1 - \gamma^5) - m_u^\lambda (1 + \gamma^5) \right) u_j^\lambda 
+\Big] \\
+- \frac{g}{2} \frac{m_e^\lambda}{M} H (\bar{e}^\lambda e^\lambda) 
+- \frac{g}{2} \frac{m_\nu^\lambda}{M} H (\bar{\nu}^\lambda \nu^\lambda) 
+- \frac{g}{2} \frac{m_u^\lambda}{M} H (\bar{u}_j^\lambda u_j^\lambda) 
+- \frac{g}{2} \frac{m_d^\lambda}{M} H (\bar{d}_j^\lambda d_j^\lambda) \\
++ \frac{i g}{2} \frac{m_\nu^\lambda}{M} \phi^0 (\bar{\nu}^\lambda \gamma^5 \nu^\lambda) 
++ \frac{i g}{2} \frac{m_u^\lambda}{M} \phi^0 (\bar{u}_j^\lambda \gamma^5 u_j^\lambda) 
+- \frac{i g}{2} \frac{m_e^\lambda}{M} \phi^0 (\bar{e}^\lambda \gamma^5 e^\lambda) 
+- \frac{i g}{2} \frac{m_d^\lambda}{M} \phi^0 (\bar{d}_j^\lambda \gamma^5 d_j^\lambda) \\
++ \bar{G}^a \partial^2 G^a 
++ g_s f^{abc} (\partial_\mu \bar{G}^a) G^b g^{c\mu} \\
++ \bar{X}^+ (\partial^2 + M^2) X^+ 
++ \bar{X}^- (\partial^2 + M^2) X^- 
++ \bar{X}^0 \left( \partial^2 + \frac{M^2}{c_w^2} \right) X^0 
++ \bar{Y} \partial^2 Y \\
++ i g c_w W_\mu^+ (\partial^\mu \bar{X}^0 X^- - \partial^\mu \bar{X}^+ X^0) 
++ i g s_w W_\mu^+ (\partial^\mu \bar{Y} X^- - \partial^\mu \bar{X}^+ Y) \\
++ i g c_w W_\mu^- (\partial^\mu \bar{X}^- X^0 - \partial^\mu \bar{X}^0 X^+) 
++ i g s_w W_\mu^- (\partial^\mu \bar{X}^- Y - \partial^\mu \bar{Y} X^+) \\
++ i g c_w Z_\mu (\partial^\mu \bar{X}^+ X^+ - \partial^\mu \bar{X}^- X^-) 
++ i g s_w A_\mu (\partial^\mu \bar{X}^+ X^+ - \partial^\mu \bar{X}^- X^-) \\
++ \frac{1}{2} g M \left( \bar{X}^+ X^+ H + \bar{X}^- X^- H + \frac{1}{c_w^2} \bar{X}^0 X^0 H \right) \\
++ \frac{2 c_w^2 - 1}{2 c_w} g M (\bar{X}^+ X^0 \phi^+ + \bar{X}^- X^0 \phi^-) 
+- \frac{1}{2 c_w} g M (\bar{X}^0 X^- \phi^+ + \bar{X}^0 X^+ \phi^-) \\
++ g M s_w (\bar{X}^+ Y \phi^+ + \bar{X}^- Y \phi^-) 
++ \frac{1}{2} i g M (\bar{X}^+ X^+ \phi^0 - \bar{X}^- X^- \phi^0) \ .
+\end{multline*}
+
+\begin{thebibliography}{1}
+\bibitem{arXiv:1209.6213}
+J. C. Romão and J. P. Silva,
+\textit{A resource for signs and Feynman diagrams of the Standard Model},
+arXiv:1209.6213 [hep-ph].
+\end{thebibliography}
+
+\end{document}
